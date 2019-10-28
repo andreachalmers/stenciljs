@@ -8,6 +8,7 @@
 
 ## Todo:
 Read https://stenciljs.com/docs/faq
+https://codethat.today/tutorial/creating-components-with-stenciljs/
 
 ## Notes
 
@@ -47,3 +48,19 @@ export class MyComponent {
   }
 }
 ```
+### Props
+- add mutable property to allow property to be changed inside the component
+
+### States
+@State - used to manage internal data for a component
+```
+@State() isActive = false
+updateStatement() {
+ this.isActive = !this.isActive
+}
+```
+State should only be used if the component needs to re-render when the data is changed. If that’s not the case it’s a good practice to avoid the @State declarator and use normal internal states instead.
+```
+internalState: boolean = true
+```
+
