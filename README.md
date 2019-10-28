@@ -27,3 +27,23 @@ Read https://stenciljs.com/docs/faq
 Once compiled, can be used like an HTML tag
 
 `<my-first-component name="Max"></my-first-component>`
+```
+import { Component, Prop, h } from '@stencil/core';
+
+@Component({
+  tag: 'my-first-component',
+})
+export class MyComponent {
+
+  // Indicate that name should be a public property on the component
+  @Prop() name: string;
+
+  render() {
+    return (
+      <p>
+        My name is {this.name}
+      </p>
+    );
+  }
+}
+```
